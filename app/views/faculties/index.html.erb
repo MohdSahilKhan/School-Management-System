@@ -6,20 +6,17 @@
             <th>E-Mail</th>
             <th>Contact Number</th>
             <th>Subject</th>
-            <% if admin_signed_in? %>
                 <th>Edit</th>
-            <% end %>
         </tr>
             <tr>
             <td><%= current_teacher.full_name %></td>
             <td><%= current_teacher.email %></td>
             <td><%= current_teacher.contact_number %></td>
             <td><%= current_teacher.subject %></td>
-            <% if admin_signed_in? %>
             <td><%= link_to "Edit", edit_teacher_registration_path %></td>
 
+            
             </tr>
-        <% end %>
     </table>
-
+<%= button_to "Go back", root_path, method: :get, class: "btn-custom1"%>
     

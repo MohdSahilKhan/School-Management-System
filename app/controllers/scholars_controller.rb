@@ -13,7 +13,7 @@ class ScholarsController < ApplicationController
     @student = Student.find(params[:id])
     @student.destroy
 
-    redirect_to root_path
+    redirect_to scholars_index_path
   end
   private
     def student_params

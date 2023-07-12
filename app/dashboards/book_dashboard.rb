@@ -10,9 +10,7 @@ class BookDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     author_name: Field::String,
-    book_name: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    book_name: Field::String
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -24,7 +22,6 @@ class BookDashboard < Administrate::BaseDashboard
     id
     author_name
     book_name
-    created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -33,8 +30,6 @@ class BookDashboard < Administrate::BaseDashboard
     id
     author_name
     book_name
-    created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES

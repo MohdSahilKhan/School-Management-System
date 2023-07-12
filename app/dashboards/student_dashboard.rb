@@ -10,20 +10,12 @@ class StudentDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     contact_number: Field::String,
-    current_sign_in_at: Field::DateTime,
-    current_sign_in_ip: Field::String,
     email: Field::String,
-    encrypted_password: Field::String,
-    full_name: Field::String,
-    last_sign_in_at: Field::DateTime,
-    last_sign_in_ip: Field::String,
     parent_name: Field::String,
-    remember_created_at: Field::DateTime,
-    reset_password_sent_at: Field::DateTime,
-    reset_password_token: Field::String,
-    sign_in_count: Field::Number,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    full_name: Field::String,
+    parent_name: Field::String,
+    password: Field::Password,
+    password_confirmation: Field::Password
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -37,27 +29,20 @@ class StudentDashboard < Administrate::BaseDashboard
     email
     contact_number
     parent_name
+    password
+    password_confirmation
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    contact_number
-    current_sign_in_at
-    current_sign_in_ip
-    email
-    encrypted_password
     full_name
-    last_sign_in_at
-    last_sign_in_ip
+    contact_number
+    email
     parent_name
-    remember_created_at
-    reset_password_sent_at
-    reset_password_token
-    sign_in_count
-    created_at
-    updated_at
+    password
+    password_confirmation
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -68,7 +53,8 @@ class StudentDashboard < Administrate::BaseDashboard
     email
     contact_number
     parent_name
-    encrypted_password
+    password
+    password_confirmation
   ].freeze
 
   # COLLECTION_FILTERS

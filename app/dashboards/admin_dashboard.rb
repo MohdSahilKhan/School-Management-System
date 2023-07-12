@@ -9,20 +9,11 @@ class AdminDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    contact_number: Field::String,
-    current_sign_in_at: Field::DateTime,
-    current_sign_in_ip: Field::String,
-    email: Field::String,
-    encrypted_password: Field::String,
     full_name: Field::String,
-    last_sign_in_at: Field::DateTime,
-    last_sign_in_ip: Field::String,
-    remember_created_at: Field::DateTime,
-    reset_password_sent_at: Field::DateTime,
-    reset_password_token: Field::String,
-    sign_in_count: Field::Number,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    contact_number: Field::String,
+    email: Field::String,
+    password: Field::Password,
+    password_confirmation: Field::Password
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -41,20 +32,9 @@ class AdminDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    contact_number
-    current_sign_in_at
-    current_sign_in_ip
-    email
-    encrypted_password
     full_name
-    last_sign_in_at
-    last_sign_in_ip
-    remember_created_at
-    reset_password_sent_at
-    reset_password_token
-    sign_in_count
-    created_at
-    updated_at
+    contact_number
+    email
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -64,7 +44,8 @@ class AdminDashboard < Administrate::BaseDashboard
     full_name
     contact_number
     email
-    encrypted_password
+    password
+    password_confirmation
   ].freeze
 
   # COLLECTION_FILTERS

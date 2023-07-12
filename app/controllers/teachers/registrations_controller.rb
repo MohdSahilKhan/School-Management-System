@@ -21,7 +21,12 @@ class Teachers::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
-    super
+    super do |resource|
+      if resource.errors.empty?
+        redirect_to faculties_index_path # Redirect to scholar index path after successful update
+        return
+      end
+    end
   end
 
   # DELETE /resource

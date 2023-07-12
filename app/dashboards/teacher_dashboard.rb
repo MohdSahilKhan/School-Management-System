@@ -10,20 +10,12 @@ class TeacherDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     contact_number: Field::String,
-    current_sign_in_at: Field::DateTime,
-    current_sign_in_ip: Field::String,
+    subject: Field::String,
     email: Field::String,
     encrypted_password: Field::String,
     full_name: Field::String,
-    last_sign_in_at: Field::DateTime,
-    last_sign_in_ip: Field::String,
-    remember_created_at: Field::DateTime,
-    reset_password_sent_at: Field::DateTime,
-    reset_password_token: Field::String,
-    sign_in_count: Field::Number,
-    subject: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    password: Field::Password,
+    password_confirmation: Field::Password
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -36,7 +28,9 @@ class TeacherDashboard < Administrate::BaseDashboard
     full_name
     email
     contact_number
-    subject
+    subject    
+    password
+    password_confirmation
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -44,39 +38,22 @@ class TeacherDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     contact_number
-    current_sign_in_at
-    current_sign_in_ip
     email
-    encrypted_password
     full_name
-    last_sign_in_at
-    last_sign_in_ip
-    remember_created_at
-    reset_password_sent_at
-    reset_password_token
-    sign_in_count
-    subject
-    created_at
-    updated_at
+    password
+    password_confirmation
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    contact_number
-    current_sign_in_at
-    current_sign_in_ip
-    email
-    encrypted_password
     full_name
-    last_sign_in_at
-    last_sign_in_ip
-    remember_created_at
-    reset_password_sent_at
-    reset_password_token
-    sign_in_count
+    contact_number
+    email
     subject
+    password
+    password_confirmation
   ].freeze
 
   # COLLECTION_FILTERS

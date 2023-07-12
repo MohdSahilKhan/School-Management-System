@@ -1,4 +1,5 @@
 <h1>Student List</h1>
+<% if teacher_signed_in? or admin_signed_in?%>
     <table>
         <tr>
             <th>Name</th>
@@ -8,9 +9,7 @@
             <% if teacher_signed_in? or admin_signed_in?%>
                 <th>Edit</th>
             <% end %>
-            <% if teacher_signed_in? or admin_signed_in?%>
             <th>Destroy</th>
-            <% end %>
         </tr>
         <% @student.each do |students| %>
             <tr>
@@ -30,3 +29,23 @@
             </tr>
         <% end %>
     </table>
+    
+<% elsif %>
+    <table>
+    <tr>
+        <th>Name</th>
+        <th>E-Mail</th>
+        <th>Contact Number</th>
+        <th>Parent Name</th>
+        <th>Edit</th>
+    </tr>
+        <tr>
+        <td><%= current_student.full_name %></td> 
+        <td><%= current_student.email %></td>
+        <td><%= current_student.contact_number %></td>
+        <td><%= current_student.parent_name %></td>
+        <td><%= link_to "Edit", edit_student_registration_path %></td>
+    </table>
+<% end %>
+
+<%= button_to "Go back", root_path, method: :get, class: "btn-custom1"%>

@@ -3,21 +3,18 @@
     <div class="log_in">
       <%= button_to "Admin Dashboard",  management_root_path, method: :get, class: "btn-custom" %> <br>
       <%= button_to "Sign out", destroy_admin_session_path, method: :delete, class: "btn-custom" %>
-      <%= link_to "edit", edit_admin_registration_path %>
     </div>
 <% elsif teacher_signed_in? %>
 <div class="log_in">
     <%= link_to "Teacher Details",  faculties_index_path %> <br>
     <%= link_to "Student Details",  scholars_index_path %>
     <%= button_to "Sign out", destroy_teacher_session_path, method: :delete, class: "btn-custom" %>
-    <%= link_to "edit", edit_teacher_registration_path %>
 </div>
 <% elsif student_signed_in? %>
 <div class="log_in">
     <%= link_to "Student Details",  scholars_index_path %> <br>
     <%= link_to "Books Details",  books_path %> <br>
     <%= button_to "Sign out", destroy_student_session_path, method: :delete, class: "btn-custom" %>
-    <%= link_to "edit", edit_student_registration_path %>
 </div>
 <% else %>
   <div class="heading">
