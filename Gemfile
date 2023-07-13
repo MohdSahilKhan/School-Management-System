@@ -78,5 +78,7 @@ end
 end
 
 gem 'pry'
+gem 'rswag-api'
+gem 'rswag-ui'
 
 
