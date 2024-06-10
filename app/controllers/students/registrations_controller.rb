@@ -22,6 +22,7 @@ class Students::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     super do |resource|
+      # binding.pry
       if resource.errors.empty?
         redirect_to scholars_index_path # Redirect to scholar index path after successful update
         return
@@ -50,10 +51,10 @@ class Students::RegistrationsController < Devise::RegistrationsController
   end
   protected
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:full_name, :parent_name,   :contact_number, :email, :password, :password_confirmation])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:full_name, :parent_name,   :contact_number, :email, :password, :password_confirmation, :image])
   end
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:full_name, :parent_name,  :contact_number, :email, :password, :password_confirmation, :current_password])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:full_name, :parent_name,  :contact_number, :email, :password, :password_confirmation, :current_password, :image])
   end
   def after_sign_up_path_for(resource)
     super(resource)

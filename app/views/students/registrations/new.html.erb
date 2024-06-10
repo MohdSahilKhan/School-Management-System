@@ -8,14 +8,19 @@
     <%= f.text_field :full_name, autofocus: true %>
   </div>
   <div class="field">
-  <%= f.label :contact_number %><br />
-  <%= f.text_field :contact_number, autofocus: true %>
-</div>
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
 
-<div class="field">
-<%= f.label :parent_name %><br />
-<%= f.text_field :parent_name, autofocus: true %>
-</div>
+  </div>
+  <div class="field">
+    <%= f.label :contact_number %><br />
+    <%= f.text_field :contact_number, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :parent_name %><br />
+    <%= f.text_field :parent_name, autofocus: true %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />

@@ -2,11 +2,7 @@ openapi: 3.0.0
 info:
   title: Test API
   version: 1.0.0
-tags:
-  - name: Users
-    description: API endpoints for managing users
-  - name: Products
-    description: API endpoints for managing products
+
 paths:
   /api/users:
     get:
@@ -25,48 +21,11 @@ paths:
                   message2:
                     type: number
                     example: 10000
-    post:
-      summary: Create a new resource
+  
       responses:
         '201':
           description: Created
-  /api/products:
-    get:
-      summary: My second API test
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                    example: Hello, world!
-                  message2:
-                    type: number
-                    example: 1000
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 
 
 
